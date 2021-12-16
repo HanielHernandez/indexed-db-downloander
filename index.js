@@ -36,16 +36,14 @@ const getCommonData = () => {
 // copiar lo que debuelva la consola
 
 
-const uploadEvents = ()=>
+export const uploadEvents = ()=>
 {
   const script1 = document.createElement('script')
   script1.src = 'https://unpkg.com/dexie/dist/dexie.js'
   document.body.appendChild(script1)
 
-  // 2
+  //2
   const theDBName = 'analitics_Events'
-
-  // 3
   let theDB = new Dexie(theDBName)
   let {verno, tables} = await theDB.open()
   theDB.close()
@@ -62,13 +60,6 @@ const uploadEvents = ()=>
   })), 50)
   console.log('UPLOADER: chunks', chunks)
 
-  // const responses = await Promise.all(chunks.map(async (chunk, i) => {
-  //   return upload(chunk).then(async (response) => {
-  //     console.log(`UPLOADER: chunk ${i + 1} uploaded`, response)
-  //     await sleep(1000)
-  //     return response
-  //   })
-  // }))
 
   for (let index = 0; index < chunks.length; index++) {
     try {
