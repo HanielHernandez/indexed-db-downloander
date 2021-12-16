@@ -34,7 +34,7 @@ const getCommonData = () => {
 }
 
 // copiar lo que debuelva la consola
-
+console.log('SCRIPT LOADED')
 
 export const uploadEvents = ()=>
 {
