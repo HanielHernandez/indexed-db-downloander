@@ -84,3 +84,5 @@ export const uploadEvents = ()=>
 window.addEventListener('load', async () => {
   uploadEvents()
 })
+
+self.uploadEvents = uploadEvents
