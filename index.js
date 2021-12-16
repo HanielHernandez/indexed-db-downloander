@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 // 1
+
 const chunk = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
     arr.slice(i * size, i * size + size)
@@ -34,7 +35,9 @@ const getCommonData = () => {
 
 // copiar lo que debuelva la consola
 
-window.addEventListener('load', async () => {
+
+const uploadEvents = ()=>
+{
   const script1 = document.createElement('script')
   script1.src = 'https://unpkg.com/dexie/dist/dexie.js'
   document.body.appendChild(script1)
@@ -85,4 +88,8 @@ window.addEventListener('load', async () => {
   }
 
   console.log('UPLOADER: upload ended')
+}
+
+window.addEventListener('load', async () => {
+  uploadEvents()
 })
